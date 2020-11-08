@@ -19,7 +19,7 @@ public class ShapeGenerator : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
 
-        lineRenderer.positionCount = 360;
+        lineRenderer.positionCount = 720;
 
         InvokeRepeating("RecalculateSuperShape", 1.0f, 0.5f);
     }
@@ -27,7 +27,7 @@ public class ShapeGenerator : MonoBehaviour
     void RecalculateSuperShape()
     {
         int index = 0;
-        for (float angle = 0.0f; angle < 360.0f; angle += 1.0f)
+        for (float angle = 0.0f; angle < 360.0f; angle += 0.5f)
         {
             Vector3 v = new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0);
 
